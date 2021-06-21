@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "GATT",
-        "repositoryURL": "https://github.com/PureSwift/GATT",
-        "state": {
-          "branch": null,
-          "revision": "a04cc0954ee1c894c7154aa964efc1659c4f592c",
-          "version": "2.4.0"
-        }
-      },
-      {
         "package": "SwiftyGPIO",
         "repositoryURL": "https://github.com/uraimo/SwiftyGPIO.git",
         "state": {
