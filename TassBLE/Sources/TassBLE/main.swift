@@ -29,14 +29,15 @@ func shell(command: String) -> Int32 {
   return task.terminationStatus
 }
 
-let state = shell(command: "raspistill -o tassImg.jpg")
-print("state: ", state)
-//~/TassPi/TassBLE/Sources/TassBLE
 let fileManager = FileManager.default
 
+// file:///home/pi/Documents
 let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
-print("url: ", documentURL.absoluteString)
+let state = shell(command: "raspistill -o \(documentURL.absoluteString)/tassImg.jpg")
+print("state: ", state)
+//~/TassPi/TassBLE/Sources/TassBLE
+
 //if #available(macOS 10.15, *) {
 //  let camera = CameraManager()
 //  camera.startCapture()
