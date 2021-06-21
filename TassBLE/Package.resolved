@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "SwiftFoundation",
-        "repositoryURL": "https://github.com/PureSwift/SwiftFoundation.git",
-        "state": {
-          "branch": "master",
-          "revision": "1cb98a64657611be501a61c150194a9834744dba",
-          "version": null
-        }
-      },
-      {
         "package": "SwiftyGPIO",
         "repositoryURL": "https://github.com/uraimo/SwiftyGPIO.git",
         "state": {
