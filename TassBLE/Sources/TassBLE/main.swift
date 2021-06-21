@@ -50,7 +50,7 @@ print("state: ", state)
 if state == 0 {
   do {
     let photo = try Data(contentsOf: path)
-    print("success get a photo")
+    print("success get a photo: \(photo.count)")
   } catch (let err) {
     print("err occured \(err.localizedDescription)")
   }
