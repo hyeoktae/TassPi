@@ -34,12 +34,20 @@ let fileManager = FileManager.default
 // file:///home/pi/Documents
 let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
-let state = shell(command: "raspistill -o \(documentURL.absoluteString)/tassImg.jpg")
+if !fileManager.fileExists(atPath: documentURL.path) {
+  do {
+    try fileManager.createDirectory(atPath: documentURL.path, withIntermediateDirectories: true, attributes: nil)
+  } catch {
+    print("couldn't create document directory")
+  }
+}
+
+let state = shell(command: "raspistill -o \(documentURL.path)/tassImg.jpg")
 print("state: ", state)
 //~/TassPi/TassBLE/Sources/TassBLE
 print("path: ", documentURL.path)
 print("query: ", documentURL.query)
-//raspistill -o file:///home/pi/Documents/tassImg.jpg
+//raspistill -o ~/home/pi/Documents/tassImg.jpg
 
 //if #available(macOS 10.15, *) {
 //  let camera = CameraManager()
