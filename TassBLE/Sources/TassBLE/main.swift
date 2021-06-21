@@ -17,7 +17,7 @@ func shell(command: String) -> Int32 {
   return task.terminationStatus
 }
 
-let state = shell(command: "raspistill - tassImg.jpg")
+let state = shell(command: "raspistill -o tassImg.jpg")
 print("state: ", state)
 //if #available(macOS 10.15, *) {
 //  let camera = CameraManager()
