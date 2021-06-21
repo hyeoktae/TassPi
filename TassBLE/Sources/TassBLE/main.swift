@@ -42,12 +42,23 @@ if !fileManager.fileExists(atPath: documentURL.path) {
   }
 }
 
-let state = shell(command: "raspistill -o \(documentURL.path)/tassImg.jpg")
+let path = documentURL.appendingPathComponent("tassImg.jpg")
+
+let state = shell(command: "raspistill -o \(path.path)")
 print("state: ", state)
-//~/TassPi/TassBLE/Sources/TassBLE
-print("path: ", documentURL.path)
-print("query: ", documentURL.query)
-//raspistill -o ~/home/pi/Documents/tassImg.jpg
+
+if state == 0 {
+  do {
+    let photo = try Data(contentsOf: path)
+    print("success get a photo")
+  } catch (let err) {
+    print("err occured \(err.localizedDescription)")
+  }
+}
+
+//raspistill -o /home/pi/Documents/tassImg.jpg
+
+
 
 //if #available(macOS 10.15, *) {
 //  let camera = CameraManager()
