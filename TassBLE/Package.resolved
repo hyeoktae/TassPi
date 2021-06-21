@@ -5,9 +5,9 @@
         "package": "Bluetooth",
         "repositoryURL": "https://github.com/PureSwift/Bluetooth.git",
         "state": {
-          "branch": null,
-          "revision": "c3beb316c08daf39d4a95b2d14ec0305ec3858a3",
-          "version": "4.2.1"
+          "branch": "master",
+          "revision": "ce3d293d08b08fdbd5b17476a629fa420e3f9892",
+          "version": null
         }
       },
       {
@@ -17,6 +17,15 @@
           "branch": null,
           "revision": "a04cc0954ee1c894c7154aa964efc1659c4f592c",
           "version": "2.4.0"
+        }
+      },
+      {
+        "package": "SwiftFoundation",
+        "repositoryURL": "https://github.com/PureSwift/SwiftFoundation.git",
+        "state": {
+          "branch": "master",
+          "revision": "1cb98a64657611be501a61c150194a9834744dba",
+          "version": null
         }
       },
       {
