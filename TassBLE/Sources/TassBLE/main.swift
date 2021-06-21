@@ -37,6 +37,9 @@ let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
 let state = shell(command: "raspistill -o \(documentURL.absoluteString)/tassImg.jpg")
 print("state: ", state)
 //~/TassPi/TassBLE/Sources/TassBLE
+print("path: ", documentURL.path)
+print("query: ", documentURL.query)
+//raspistill -o file:///home/pi/Documents/tassImg.jpg
 
 //if #available(macOS 10.15, *) {
 //  let camera = CameraManager()
