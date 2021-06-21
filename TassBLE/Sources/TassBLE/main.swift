@@ -7,14 +7,15 @@
 
 import Foundation
 
+print("raspistill -o tassImg.jpg")
 
-if #available(macOS 10.15, *) {
-  let camera = CameraManager()
-  camera.startCapture()
-} else {
-  // Fallback on earlier versions
-  print("no Module")
-}
+//if #available(macOS 10.15, *) {
+//  let camera = CameraManager()
+//  camera.startCapture()
+//} else {
+//  // Fallback on earlier versions
+//  print("no Module")
+//}
 
 
 
