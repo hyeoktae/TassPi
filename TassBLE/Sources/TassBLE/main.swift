@@ -24,7 +24,7 @@ func shell(_ command: String) -> String {
     task.standardOutput = pipe
     task.standardError = pipe
     task.arguments = ["-c", command]
-    task.launchPath = "/bin/zsh"
+    task.launchPath = "/bin/env"
     task.launch()
     
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
