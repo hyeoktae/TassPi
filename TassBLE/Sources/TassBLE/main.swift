@@ -10,9 +10,22 @@ import Foundation
 @discardableResult
 func shell(command: String) -> Int32 {
   let task = Process()
-  task.launchPath = "/usr/bin/env"
+  if #available(macOS 10.13, *) {
+    task.executableURL = URL(string: "/usr/bin/env")
+  } else {
+    task.launchPath = "/usr/bin/env"
+  }
   task.arguments = ["bash", "-c", command]
-  task.launch()
+  if #available(macOS 10.13, *) {
+    do {
+      try task.run()
+    } catch let err {
+      print("err: ", err.localizedDescription)
+    }
+  } else {
+    // Fallback on earlier versions
+    task.launch()
+  }
   task.waitUntilExit()
   return task.terminationStatus
 }
