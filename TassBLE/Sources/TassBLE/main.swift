@@ -23,7 +23,6 @@ func shell(command: String) -> Int32 {
       print("err: ", err.localizedDescription)
     }
   } else {
-    // Fallback on earlier versions
     task.launch()
   }
   task.waitUntilExit()
@@ -32,6 +31,12 @@ func shell(command: String) -> Int32 {
 
 let state = shell(command: "raspistill -o tassImg.jpg")
 print("state: ", state)
+//~/TassPi/TassBLE/Sources/TassBLE
+let fileManager = FileManager.default
+
+let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+
+print("url: ", documentURL.absoluteString)
 //if #available(macOS 10.15, *) {
 //  let camera = CameraManager()
 //  camera.startCapture()
