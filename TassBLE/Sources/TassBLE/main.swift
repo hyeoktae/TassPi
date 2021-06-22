@@ -10,6 +10,7 @@ import Foundation
 let camera = CameraManager()
 
 let data = camera.photoData()
+let temp = ble.bleUUID
 
 switch data {
 case .success(let data):
