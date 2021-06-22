@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Bluetooth
 import BluetoothGATT
 
 /// Test L2CAP socket
@@ -57,8 +56,7 @@ final class L2CAP: L2CAPSocketProtocol {
     /// Reads from the socket.
     @discardableResult
     func recieve(_ bufferSize: Int) throws -> Data? {
-        
-        guard let sentData = self.input.popFirst()
+      guard let sentData = self.input.first
             else { return nil }
         
         let readData = Data(sentData.prefix(bufferSize))
