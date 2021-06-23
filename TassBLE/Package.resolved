@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "BluetoothLinux",
+        "repositoryURL": "https://github.com/PureSwift/BluetoothLinux.git",
+        "state": {
+          "branch": "master",
+          "revision": "e9dd7332b5ac92c09d3d9ff9244ac535afc5f493",
+          "version": null
+        }
+      },
+      {
         "package": "SwiftyGPIO",
         "repositoryURL": "https://github.com/uraimo/SwiftyGPIO.git",
         "state": {
